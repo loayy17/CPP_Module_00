@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+
+std::string capitalizer(std::string str)
+{
+	int	len;
+	int	i;
+
+	len = str.length();
+	i = -1;
+	while (++i < len)
+		str[i] = std::toupper(str[i]);
+	return (str);
+}
+
+int	main(int ac, char **av)
+{
+	if (ac < 2)
+		return (1);
+	int i = 0;
+	while (++i < ac)
+		std::cout << capitalizer(av[i]);
+	std::cout << std::endl;
+	return (0);
+}
