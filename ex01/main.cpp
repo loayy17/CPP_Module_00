@@ -9,8 +9,8 @@ int	main(void)
 	std::string command;
 	while (true)
 	{
-		std::cout << "Choose Operation: ADD | SEARCH | EXIT" << std::endl;
-		if (!validateCin(command))
+		if (!getValidInput("Choose Operation[ADD | SEARCH | EXIT]: ", command,
+				false))
 			continue ;
 		if (command == "ADD")
 		{
@@ -21,21 +21,13 @@ int	main(void)
 		}
 		else if (command == "SEARCH")
 		{
-			std::cout << "Enter name to search (first name | last name | nickname): ";
-			std::string searchName;
-			if (!validateCin(searchName))
-				continue ;
-			phoneBook.searchContact(searchName);
+			phoneBook.searchContact();
 		}
 		else if (command == "EXIT")
 		{
 			std::cout << "Exiting the program." << std::endl;
 			break ;
 		}
-        else if(command == "displayAll")
-        {
-            phoneBook.displayAll();
-        }
 		else
 			std::cout << "Invalid command." << std::endl;
 	}

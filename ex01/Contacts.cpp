@@ -8,37 +8,51 @@ Contact::Contact()
 	fName = "";
 	lName = "";
 	nickName = "";
-	phoneNumber = 0;
+	phoneNumber = "";
 	darkestSecret = "";
 }
 
 void Contact::setContact()
 {
 	// first name
-	isValidInput("Enter First Name: ", fName);
+	if (!getValidInput("Enter First Name: ", fName, false))
+		return ;
 	// last name
-	isValidInput("Enter Last Name: ", lName);
+	if (!getValidInput("Enter Last Name: ", lName, false))
+		return ;
 	// nick name
-	isValidInput("Enter Nick Name: ", nickName);
+	if (!getValidInput("Enter Nick Name: ", nickName, false))
+		return ;
 	// phone number
-	isValidPhoneNumber("Enter Phone Number: ", phoneNumber);
+	if (!getValidInput("Enter Phone Number: ", phoneNumber, true))
+		return ;
 	// darkest secret
-	isValidInput("Enter Darkest Secret: ", darkestSecret);
-	std::cin.clear();
+	if (!getValidInput("Enter Darkest Secret: ", darkestSecret, false))
+		return ;
 	std::cout << "Contact added successfully." << std::endl;
 }
 
-std::string Contact::getName(int index)
+std::string Contact::getFirstName()
 {
-	switch (index)
-	{
-	case FIRST_NAME:
-		return (fName);
-	case LAST_NAME:
-		return (lName);
-	case NICK_NAME:
-		return (nickName);
-	default:
-		return ("");
-	}
+	return (fName);
+}
+
+std::string Contact::getLastName()
+{
+	return (lName);
+}
+
+std::string Contact::getNickName()
+{
+	return (nickName);
+}
+
+std::string Contact::getPhoneNumber()
+{
+	return (phoneNumber);
+}
+
+std::string Contact::getDarkestSecret()
+{
+	return (darkestSecret);
 }

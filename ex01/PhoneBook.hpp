@@ -3,7 +3,6 @@
 
 # include "Contacts.hpp"
 # include <iostream>
-# include <vector>
 
 class PhoneBook
 {
@@ -15,8 +14,7 @@ class PhoneBook
     public:
         PhoneBook();
         void addContact(const Contact &contact);
-        void searchContact(std::string &name);
-        void displayAll();
+        void searchContact();
+        std::string truncateString(const std::string &str) const;
 };
-
 #endif
