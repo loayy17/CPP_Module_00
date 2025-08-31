@@ -16,7 +16,10 @@ std::string capitalizer(std::string str)
 int	main(int ac, char **av)
 {
 	if (ac < 2)
-		return (1);
+	{
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+		return (0);
+	}
 	int i = 0;
 	while (++i < ac)
 		std::cout << capitalizer(av[i]);
