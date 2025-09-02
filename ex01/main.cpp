@@ -11,7 +11,7 @@ int	main(void)
 	{
 		if (!getValidInput("Choose Operation[ADD | SEARCH | EXIT]: ", command,
 				false))
-			continue ;
+			break;
 		if (command == "ADD")
 		{
 			std::cout << "Fill required fields." << std::endl;
